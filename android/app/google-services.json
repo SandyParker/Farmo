@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "797036482839",
+    "project_id": "farmo-404ba",
+    "storage_bucket": "farmo-404ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797036482839:android:607ed5829973af589da752",
+        "android_client_info": {
+          "package_name": "com.syntheticdevs.farmo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTzaQZknu2dKpYvvfULKzlveduZmM7jTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
