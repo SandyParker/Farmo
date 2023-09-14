@@ -82,6 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: emailController,
                 hintText: 'Email',
                 obscureText: false,
+                icon: Icon(Icons.email_outlined),
               ),
               const SizedBox(
                 height: 16.0,
@@ -91,12 +92,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 controller: passwordController,
                 hintText: 'Password',
                 obscureText: true,
+                icon: Icon(Icons.lock_outline),
               ),
               const SizedBox(height: 25.0),
               MyTextField(
                 controller: confirmpasswordController,
                 hintText: 'Confirm Password',
                 obscureText: true,
+                icon: Icon(Icons.lock_outline),
               ),
               const SizedBox(height: 25.0),
               //sign-in button

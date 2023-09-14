@@ -81,6 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                 controller: emailController,
                 hintText: 'Email',
                 obscureText: false,
+                icon: Icon(Icons.email_outlined),
               ),
               const SizedBox(
                 height: 16.0,
@@ -90,6 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                 controller: passwordController,
                 hintText: 'Password',
                 obscureText: true,
+                icon: Icon(Icons.lock_outline),
               ),
               const SizedBox(height: 25.0),
               //sign-in button

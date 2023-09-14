@@ -1,4 +1,6 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:ridesharev2/Pages/scan.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AppBar(
+      appBar: AppBar(
         title: Text('Farmo'),
         leading: Hero(
           tag: 'logo',
@@ -21,6 +23,14 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(onPressed: () async {
+            await availableCameras().then((value) => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => Scan(cameras: value))));
+          }, child: Text("Camera"))
+        ],
       ),
     );
   }
