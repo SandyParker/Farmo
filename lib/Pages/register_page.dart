@@ -46,86 +46,90 @@ class _RegisterPageState extends State<RegisterPage> {
             horizontal: 25.0,
             vertical: 16.0,
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 50.0,
-              ),
-              //logo
-              Center(
-                child: Hero(
-                  tag: 'logo',
-                  child: Container(
-                    height: 100.0,
-                    child: Image.asset(
-                      'images/logo.png',
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 25.0,
-              ),
-              //create account message
-              const Text(
-                "Let's get you started",
-                style: TextStyle(
-                  fontSize: 18,
-                ),
-              ),
-              const SizedBox(
-                height: 25.0,
-              ),
-              //email text field
-              MyTextField(
-                controller: emailController,
-                hintText: 'Email',
-                obscureText: false,
-                icon: Icon(Icons.email_outlined),
-              ),
-              const SizedBox(
-                height: 16.0,
-              ),
-              //password text field
-              MyTextField(
-                controller: passwordController,
-                hintText: 'Password',
-                obscureText: true,
-                icon: Icon(Icons.lock_outline),
-              ),
-              const SizedBox(height: 25.0),
-              MyTextField(
-                controller: confirmpasswordController,
-                hintText: 'Confirm Password',
-                obscureText: true,
-                icon: Icon(Icons.lock_outline),
-              ),
-              const SizedBox(height: 25.0),
-              //sign-in button
-              MyButton(onTap: signUp, text: 'Sign-up'),
-              const SizedBox(
-                height: 25.0,
-              ),
-
-              Row(
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Already a member?"),
-                  const SizedBox(width: 4.0),
-                  GestureDetector(
-                    onTap: widget.onTap,
-                    child: const Text(
-                      'Login now',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                  const SizedBox(
+                    height: 50.0,
+                  ),
+                  //logo
+                  Center(
+                    child: Hero(
+                      tag: 'logo',
+                      child: Container(
+                        height: 100.0,
+                        child: Image.asset(
+                          'images/logo.png',
+                        ),
                       ),
                     ),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  //create account message
+                  const Text(
+                    "Let's get you started",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+                  //email text field
+                  MyTextField(
+                    controller: emailController,
+                    hintText: 'Email',
+                    obscureText: false,
+                    icon: Icon(Icons.email_outlined),
+                  ),
+                  const SizedBox(
+                    height: 16.0,
+                  ),
+                  //password text field
+                  MyTextField(
+                    controller: passwordController,
+                    hintText: 'Password',
+                    obscureText: true,
+                    icon: Icon(Icons.lock_outline),
+                  ),
+                  const SizedBox(height: 25.0),
+                  MyTextField(
+                    controller: confirmpasswordController,
+                    hintText: 'Confirm Password',
+                    obscureText: true,
+                    icon: Icon(Icons.lock_outline),
+                  ),
+                  const SizedBox(height: 25.0),
+                  //sign-in button
+                  MyButton(onTap: signUp, text: 'Sign-up'),
+                  const SizedBox(
+                    height: 25.0,
+                  ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Already a member?"),
+                      const SizedBox(width: 4.0),
+                      GestureDetector(
+                        onTap: widget.onTap,
+                        child: const Text(
+                          'Login now',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  //not a member?? register
                 ],
               ),
-              //not a member?? register
-            ],
+            ),
           ),
         ),
       ),
