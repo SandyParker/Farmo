@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
         title: Text('Farmo'),
         leading: Hero(
           tag: 'logo',
-          child: Container(
+          child: Container  (
             height: 100.0,
             child: Image.asset(
               'images/logo.png',

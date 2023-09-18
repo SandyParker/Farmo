@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:ridesharev2/Pages/home_page.dart';
+import 'package:ridesharev2/Components/camera_button.dart';
 
 class Scan extends StatefulWidget {
   const Scan({Key? key, required this.cameras}) : super(key: key);
@@ -24,6 +25,11 @@ class _ScanState extends State<Scan> {
   void initState() {
     super.initState();
     initCamera(widget.cameras![0]);
+  }
+
+  void flipCam() {
+    setState(() => _isRearCameraSelected = !_isRearCameraSelected);
+    initCamera(widget.cameras![_isRearCameraSelected ? 0 : 1]);
   }
 
   Future takePicture() async {
@@ -77,30 +83,18 @@ class _ScanState extends State<Scan> {
               child:
                   Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
                 Expanded(
-                  child: IconButton(
-                    padding: EdgeInsets.zero,
-                    iconSize: 30,
-                    icon: Icon(
-                        _isRearCameraSelected
-                            ? CupertinoIcons.switch_camera
-                            : CupertinoIcons.switch_camera_solid,
-                        color: Colors.white),
-                    onPressed: () {
-                      setState(
-                          () => _isRearCameraSelected = !_isRearCameraSelected);
-                      initCamera(
-                          widget.cameras![_isRearCameraSelected ? 0 : 1]);
-                    },
-                  ),
+                  child: CameraButton(
+                      onTap: flipCam,
+                      icon: Icon(
+                          _isRearCameraSelected
+                              ? CupertinoIcons.switch_camera
+                              : CupertinoIcons.switch_camera_solid,
+                          color: Colors.white)),
                 ),
                 Expanded(
-                  child: IconButton(
-                    onPressed: takePicture,
-                    iconSize: 50,
-                    padding: EdgeInsets.zero,
-                    constraints: const BoxConstraints(),
-                    icon: const Icon(Icons.circle, color: Colors.white),
-                  ),
+                  child: CameraButton(
+                      onTap: takePicture,
+                      icon: const Icon(Icons.circle, color: Colors.white)),
                 ),
                 const Spacer(),
               ]),
