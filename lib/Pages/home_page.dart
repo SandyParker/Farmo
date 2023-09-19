@@ -1,6 +1,5 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:ridesharev2/Components/my_nav_bar.dart';
 import 'package:ridesharev2/Pages/scan.dart';
 
@@ -15,10 +14,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Farmo'),
+        title: const Text('Farmo'),
         leading: Hero(
           tag: 'logo',
-          child: Container  (
+          child: Container(
             height: 100.0,
             child: Image.asset(
               'images/logo.png',
@@ -33,10 +32,10 @@ class _HomePageState extends State<HomePage> {
                 await availableCameras().then((value) => Navigator.push(context,
                     MaterialPageRoute(builder: (_) => Scan(cameras: value))));
               },
-              child: Text("Camera"))
+              child: const Text("Camera"))
         ],
       ),
-      bottomNavigationBar: MyNavBar(),
+      bottomNavigationBar: const MyNavBar(),
     );
   }
 }
