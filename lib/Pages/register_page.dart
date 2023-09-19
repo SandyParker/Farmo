@@ -3,8 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:ridesharev2/Components/my_button.dart';
 import 'package:ridesharev2/Components/my_text_field.dart';
 import 'package:ridesharev2/Services/Auth/auth_service.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
